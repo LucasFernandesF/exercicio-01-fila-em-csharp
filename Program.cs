@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Threading;
 using System.Linq;
@@ -16,9 +16,9 @@ class Funcionario
     public void AtenderCliente(Cliente cliente)
     {
         
-        Console.WriteLine($"[{DateTime.Now}] {Nome} está atendendo o cliente {cliente.Nome} por {cliente.TempoDeEspera} segundos.");
+        Console.WriteLine($"[{DateTime.Now}] {Nome} está atendendo o {cliente.Nome} por {cliente.TempoDeEspera} segundos.");
         Thread.Sleep(cliente.TempoDeEspera * 1000);
-        Console.WriteLine($"[{DateTime.Now}] {Nome} atendeu o cliente {cliente.Nome} em {cliente.TempoDeEspera} segundos.");
+        Console.WriteLine($"[{DateTime.Now}] {Nome} atendeu o {cliente.Nome} em {cliente.TempoDeEspera} segundos.");
     }
 }
 
@@ -44,7 +44,7 @@ class Program
 
         foreach (var cliente in fila)
         {
-            Console.WriteLine($"[{DateTime.Now}] entrou na fila de espera {cliente.Nome} (Tempo de espera: {cliente.TempoDeEspera} segundos)");
+            Console.WriteLine($"[{DateTime.Now}] {cliente.Nome} entrou na fila de espera (Tempo de espera: {cliente.TempoDeEspera} segundos)");
         }
 
         while (fila.Count > 0)
